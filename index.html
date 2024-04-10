@@ -140,37 +140,6 @@
         performSearch(); // Call performSearch function once when the page loads
     };
 </script>
-    <script>
-           function saveSearchHistory(searchTerm) {
-            let history = JSON.parse(localStorage.getItem('searchHistory')) || [];
-            history.push(searchTerm);
-            localStorage.setItem('searchHistory', JSON.stringify(history));
-        }
-
-        function saveFavorite(word) {
-            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-            favorites.push(word);
-            localStorage.setItem('favorites', JSON.stringify(favorites));
-        }
-
-        function loadSearchHistory() {
-            let history = JSON.parse(localStorage.getItem('searchHistory')) || [];
-            let historyContainer = document.getElementById('search-history');
-            historyContainer.innerHTML = "<h2>Search History</h2>";
-            history.forEach(term => {
-                historyContainer.innerHTML += `<p>${term}</p>`;
-            });
-        }
-
-        function loadFavorites() {
-            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-            let favoritesContainer = document.getElementById('favorites');
-            favoritesContainer.innerHTML = "<h2>Favorites</h2>";
-            favorites.forEach(word => {
-                favoritesContainer.innerHTML += `<p>${word}</p>`;
-            });
-        }
-</script>
         window.addEventListener('load', function() {
             loadSearchHistory();
             loadFavorites();
